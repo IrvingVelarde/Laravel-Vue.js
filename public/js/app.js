@@ -12548,20 +12548,26 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 ;
 //# sourceMappingURL=axios.map
-    var urlUsers = 'https://jsonplaceholder.typicode.com/users';
     new Vue({
-      el: '#main',
-      created: function() {
-        this.getUsers();
+      el: '#crud',
+      created: function(){
+      	this.getKeeps();
       },
-      data: {
-        lists: []
+      data:{
+      	keeps:[]
       },
-      methods: {
-        getUsers: function() {
-          axios.get(urlUsers).then(response => {
-            this.lists = response.data
-          });
-        }
-      }
+      methods:{
+      		getKeeps: function() {
+			var urlKeeps = 'tasks';
+			axios.get(urlKeeps).then(response => {
+				this.keeps = response.data
+			});
+		},
+		deleteKeep: function(keep) {
+			var url = 'tasks/' + keep.id;
+			axios.delete(url).then(response => {
+				this.getKeeps();
+			});
+		}
+	  }
     });
