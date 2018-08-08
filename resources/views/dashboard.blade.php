@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <a href="#" class="btn btn-primary"> <span class="fas fa-plus-square" aria-hidden="true"></span> Agregar Categoria</a>
+                    <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#create"> <span class="fa fa-plus-square" aria-hidden="true"></span> Agregar Categoria</a>
                     <p>
                     <table class="table table-bordered table-hover">
                         <thead>
@@ -26,17 +26,18 @@
                                 <td>@{{ keep.id  }}</td>
                                 <td>@{{ keep.keep }}</td>
                                 <td width="10px">
-                                    <a href="#" class="btn btn-info"><span class="fas fa-eye" aria-hidden="true"></span> Ver</a>
+                                    <a href="#" class="btn btn-info"><span class="fa fa-eye" aria-hidden="true"></span> Ver</a>
                                 </td>
                                 <td width="10px">
-                                    <a href="#" class="btn btn-warning"><span class="fas fa-edit" aria-hidden="true"></span> Editar</a>
+                                    <a href="#" class="btn btn-warning"><span class="fa fa-edit" aria-hidden="true"></span> Editar</a>
                                 </td>
                                 <td width="10px">
-                                	<a href="#" class="btn btn-danger" v-on:click.prevent="deleteKeep(keep)"><span class="fas fa-trash" aria-hidden="true"></span> Eliminar</a>
+                                	<a href="#" class="btn btn-danger" v-on:click.prevent="deleteKeep(keep)"><span class="fa fa-trash" aria-hidden="true"></span> Eliminar</a>
                                 </td>
                             </tr>
                         </tbody>   
-                    </table>     	
+                    </table>  
+                    @include('create')  	
                 </div>
             </div>
         </div>

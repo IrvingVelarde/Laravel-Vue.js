@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 
-Route::resource('tasks','TaskController');
+//Route::resource('tasks','TaskController');
+Route::resource('tasks', 'TaskController', ['except' => 'show', 'create', 'edit']);
